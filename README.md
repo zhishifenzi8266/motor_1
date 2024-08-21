@@ -8,3 +8,5 @@ UnityEngine.Rigidbody.AddForce (UnityEngine.Vector3 force, UnityEngine.ForceMode
 UnityEngine.Rigidbody.AddForce (System.Single x, System.Single y, System.Single z, UnityEngine.ForceMode mode) (at <62315e55df454945b72a1fd1878414c1>:0)
 player_move.Update () (at Assets/Scenes/script/player_move.cs:60)
 
+bug fix* 
+
