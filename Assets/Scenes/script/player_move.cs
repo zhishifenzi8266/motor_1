@@ -15,6 +15,7 @@ public class player_move : MonoBehaviour
     //public Vector3 newPosotion;
     private Rigidbody rb;
     public float jump = 0.5f;
+    private bool isdimian;
 
     //private Rigidbody rb:
 
@@ -57,10 +58,17 @@ public class player_move : MonoBehaviour
         //if(Input.GetKey(KeyCode.Space)) {
         //    Rigidbody.AddForce(0.0f, speed, 0.0f);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Physics=物体 raycast=玩家下面生成一条线检测他的vector往下是否是1,5f 如果不是跳跃不了
+        isdimian = Physics.Raycast(transform.position, Vector3.down, 1.5f);
+        
+
+        //把isdimian函数绑定给jump
+        if (Input.GetKeyDown(KeyCode.Space) && isdimian)
         {
             rb.AddForce(0f, jump, 0f, ForceMode.Impulse);
 
         }
+
+
     }
 }
