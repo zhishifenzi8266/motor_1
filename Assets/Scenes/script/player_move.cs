@@ -13,13 +13,15 @@ public class player_move : MonoBehaviour
     //public Regidbody body;
     //public float jump;
     //public Vector3 newPosotion;
-    public Rigidbody rb;
+    private Rigidbody rb;
     public float jump = 0.5f;
 
+    //private Rigidbody rb:
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         Debug.Log("ÓÎÏ·¿ªÊ¼");
     }
 
