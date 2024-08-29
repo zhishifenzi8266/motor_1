@@ -82,10 +82,10 @@ public class player_move : MonoBehaviour
     private void OnCollisionEnter(Collision pengzhuan)
     {
         Debug.Log("我创到了：" +  pengzhuan.gameObject.tag + "!");
-        
-        if(pengzhuan.gameObject.CompareTag("dimian"))
+
+        if (pengzhuan.gameObject.CompareTag("dimian"))
         {
-            isdimian=true;
+            isdimian = true;
         }
         if (pengzhuan.gameObject.CompareTag("KillZone"))
         {
