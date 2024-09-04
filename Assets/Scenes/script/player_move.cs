@@ -101,7 +101,7 @@ public class player_move : MonoBehaviour
         }
         if (pengzhuan.gameObject.CompareTag("bitcoin"))
         {
-            Destroy(pengzhuang.gameObject);
+            Destroy(pengzhuan.gameObject);
         }
     }
 }
