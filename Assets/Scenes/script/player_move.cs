@@ -19,6 +19,7 @@ public class player_move : MonoBehaviour
     public float jump = 0.5f;
     public bool isdimian;
     public Collision pengzhuang; //Åö×²¼ì²â2
+    public int bitcoin;
 
     //private Rigidbody rb:
 
@@ -102,6 +103,7 @@ public class player_move : MonoBehaviour
         if (pengzhuan.gameObject.CompareTag("bitcoin"))
         {
             Destroy(pengzhuan.gameObject);
+            bitcoin = bitcoin + 1;
         }
     }
 }
