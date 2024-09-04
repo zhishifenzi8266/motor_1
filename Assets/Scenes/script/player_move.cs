@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Unity.VisualScripting.Member;
 
 
@@ -87,9 +88,20 @@ public class player_move : MonoBehaviour
         {
             isdimian = true;
         }
+        //死亡的时候加载地图LoadScene(0)
         if (pengzhuan.gameObject.CompareTag("KillZone"))
         {
             Debug.Log("KILL ME!!!");
+            SceneManager.LoadScene(0);
+        }
+        //赢的时候加载地图LoadScene(1)
+        if (pengzhuan.gameObject.CompareTag("win"))
+        {
+            SceneManager.LoadScene(1);
+        }
+        if (pengzhuan.gameObject.CompareTag("bitcoin"))
+        {
+            Destroy(pengzhuang.gameObject);
         }
     }
 }
