@@ -100,7 +100,7 @@ public class player_move : MonoBehaviour
         //赢的时候加载地图LoadScene(1)
         if (pengzhuan.gameObject.CompareTag("win"))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         if (pengzhuan.gameObject.CompareTag("bitcoin"))
         {
