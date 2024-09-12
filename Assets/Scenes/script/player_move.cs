@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class player_move : MonoBehaviour
 {
     private int d = 0;
-    public float speed = 0.1f;
+    public int force = 3;
     public Vector2 vectormove;
     //public Regidbody body;
     //public float jump;
@@ -21,7 +21,7 @@ public class player_move : MonoBehaviour
     public bool isdimian;
     public Collision pengzhuang; //碰撞检测2
     public int bitcoin;
-    public TMPro.TextMeshProUGUI scoretext;
+    public TMPro.TextMeshProUGUI    scoretext;
 
     //private Rigidbody rb:
 
@@ -47,23 +47,34 @@ public class player_move : MonoBehaviour
             Debug.Log($"输出T{d}次");
         }
 
+        //人物移动2.0《
+        rb = this.GetComponent<Rigidbody>();
+
+        float v = Input.GetAxis("Vertical");
+
+        float h = Input.GetAxis("Horizontal");//得到键盘左右控制
+
+        rb.AddForce(new Vector3(h, 0, v) * force);//对物体施加力
+
+
+        //》
         //人物移动 《
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(0.0f, 0f, speed);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-speed, 0f, 0f);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(0f, 0f, -speed);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(speed, 0f, 0f);
-        }
+        //if (Input.GetKey(KeyCode.W))
+        //{
+        //    transform.Translate(0.0f, 0f, speed);
+        //}
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    transform.Translate(-speed, 0f, 0f);
+        //}
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    transform.Translate(0f, 0f, -speed);
+        //}
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    transform.Translate(speed, 0f, 0f);
+        //}
         //人物移动 》
 
         //if(Input.GetKey(KeyCode.Space)) {
