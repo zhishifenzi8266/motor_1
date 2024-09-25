@@ -8,6 +8,8 @@ TagManager:
   - KillZone
   - win
   - bitcoin
+  - slider
+  - text
   layers:
   - Default
   - TransparentFX

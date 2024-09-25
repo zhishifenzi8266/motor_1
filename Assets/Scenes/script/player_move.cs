@@ -22,6 +22,7 @@ public class player_move : MonoBehaviour
     public Collision pengzhuang; //碰撞检测2
     public int bitcoin;
     public TMPro.TextMeshProUGUI    scoretext;
+    public float moveSpeed; //摄像头跟踪鼠标
 
     //private Rigidbody rb:
 
@@ -31,6 +32,7 @@ public class player_move : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Debug.Log("游戏开始");
         isdimian = true;
+        moveSpeed = 600f; //摄像头跟踪鼠标移动速度
     }
 
     // Update is called once per frame
@@ -90,9 +92,17 @@ public class player_move : MonoBehaviour
             rb.AddForce(0f, jump, 0f, ForceMode.Impulse);
             isdimian = false;
         }
+        //摄像头跟踪鼠标的方法《
+        Vector3 angle = Vector3.zero;
+
+        angle.x = transform.localEulerAngles.x - Input.GetAxis("Mouse Y") * moveSpeed * Time.deltaTime;
+        angle.y = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * moveSpeed * Time.deltaTime;
+
+        transform.localEulerAngles = angle;
+        //摄像头跟踪鼠标的方法》
 
     }
-    
+
     //碰撞检测2（老师的方法）
     private void OnCollisionEnter(Collision pengzhuan)
     {
