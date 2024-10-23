@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1558973380642150022}
   - component: {fileID: 7408732897484744842}
   - component: {fileID: 3442880873016025521}
+  - component: {fileID: 2485817438107786745}
   m_Layer: 0
   m_Name: bitcoin
   m_TagString: bitcoin
@@ -99,7 +100,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -107,3 +108,15 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &2485817438107786745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033341320524035392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af32339ba4b33e419ffc754b36f6720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

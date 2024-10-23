@@ -16,7 +16,7 @@ public class menu : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene(1);
-    }
+    } 
     public void Menu()
     {
         SceneManager.LoadScene(0);
@@ -28,4 +28,10 @@ public class menu : MonoBehaviour
         //SliderValueText.text = _value.ToString();
         SliderValueText.text = SliderValue.ToString();
     }
+
+    public void GoToLevel(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
 }

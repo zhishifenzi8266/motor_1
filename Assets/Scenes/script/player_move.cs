@@ -17,11 +17,12 @@ public class player_move : MonoBehaviour
     //public float jump;
     //public Vector3 newPosotion;
     private Rigidbody rb;
-    public float jump = 0.5f;
-    public bool isdimian;
-    public Collision pengzhuang; //碰撞检测2
+    public float jump = 0.5f; //跳跃高度
+    public bool isdimian; //检测地面碰撞是否可以跳跃
+    public Collision pengzhuan; //碰撞检测2
     public int bitcoin;
-    public TMPro.TextMeshProUGUI    scoretext;
+    public TMPro.TextMeshProUGUI scoretext; //显示分数
+    public TMPro.TextMeshProUGUI warning; //终点提示
     public float moveSpeed; //摄像头跟踪鼠标
 
     //private Rigidbody rb:
@@ -29,6 +30,7 @@ public class player_move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        warning.enabled = false;
         rb = GetComponent<Rigidbody>();
         Debug.Log("游戏开始");
         isdimian = true;
@@ -112,22 +114,24 @@ public class player_move : MonoBehaviour
         {
             isdimian = true;
         }
-        //死亡的时候加载地图LoadScene(0)
-        if (pengzhuan.gameObject.CompareTag("KillZone"))
+        if (pengzhuan.gameObject.CompareTag("KillZone"))//死亡的时候加载地图LoadScene(0)
         {
             Debug.Log("KILL ME!!!");
             SceneManager.LoadScene(0);
         }
-        //赢的时候加载地图LoadScene(1)
-        if (pengzhuan.gameObject.CompareTag("win"))
-        {
-            SceneManager.LoadScene(2);
-        }
+        //if (pengzhuan.gameObject.CompareTag("win")) //赢的时候加载地图LoadScene(1)
+        //{
+        //    SceneManager.LoadScene(2);
+        //}
         if (pengzhuan.gameObject.CompareTag("bitcoin"))
         {
             Destroy(pengzhuan.gameObject);
             bitcoin++;
             scoretext.text = bitcoin.ToString();
+        }
+        if(pengzhuan.gameObject.CompareTag("win"))
+        {
+            warning.enabled = true;
         }
     }
 }
