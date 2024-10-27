@@ -72,6 +72,7 @@ public class player_move : MonoBehaviour
             Debug.Log("KILL ME!!!");
             SceneManager.LoadScene(0);
         }
+<<<<<<< HEAD
         //if (pengzhuan.gameObject.CompareTag("win")) //赢的时候加载地图LoadScene(1)
         //{
         //    SceneManager.LoadScene(2);
@@ -96,6 +97,20 @@ public class player_move : MonoBehaviour
     {
         Debug.Log("我创到了：" + pengzhuan2.gameObject.tag + "!");
         if (pengzhuan2.gameObject.CompareTag("bitcoin"))
+=======
+    }
+
+    void OnTriggerEnter(Collider pengzhuan2)
+    {
+        Debug.Log("我创到了：" + pengzhuan2.gameObject.tag + "!");
+        if (pengzhuan2.gameObject.CompareTag("bitcoin"))
+        {
+            Destroy(pengzhuan2.gameObject);
+            bitcoin++;
+            scoretext.text = bitcoin.ToString();
+        }
+        if (pengzhuan2.gameObject.CompareTag("win"))
+>>>>>>> parent of f4b1ae7 (Revert "bug fix* OnTriggerEnter & OnCollisionEnter")
         {
             Destroy(pengzhuan2.gameObject);
             bitcoin++;
