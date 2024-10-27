@@ -72,7 +72,6 @@ public class player_move : MonoBehaviour
             Debug.Log("KILL ME!!!");
             SceneManager.LoadScene(0);
         }
-<<<<<<< HEAD
         //if (pengzhuan.gameObject.CompareTag("win")) //赢的时候加载地图LoadScene(1)
         //{
         //    SceneManager.LoadScene(2);
@@ -89,11 +88,11 @@ public class player_move : MonoBehaviour
             bitcoin++;
             scoretext.text = bitcoin.ToString();
         }
-        if (other.gameObject.CompareTag("win"))
-=======
+        if (other.gameObject.CompareTag("win"));
+
     }
 
-    void OnTriggerEnter(Collider pengzhuan2)
+    private void OnTriggerEnter(Collider pengzhuan2)
     {
         Debug.Log("我创到了：" + pengzhuan2.gameObject.tag + "!");
         if (pengzhuan2.gameObject.CompareTag("bitcoin"))
@@ -103,7 +102,6 @@ public class player_move : MonoBehaviour
             scoretext.text = bitcoin.ToString();
         }
         if (pengzhuan2.gameObject.CompareTag("win"))
->>>>>>> parent of f4b1ae7 (Revert "bug fix* OnTriggerEnter & OnCollisionEnter")
         {
             warning.text = "请按住E保存";
             warning.enabled = true;
