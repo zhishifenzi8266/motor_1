@@ -123,18 +123,24 @@ public class player_move : MonoBehaviour
         //{
         //    SceneManager.LoadScene(2);
         //}
-        if (pengzhuan.gameObject.CompareTag("bitcoin"))
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("我进到：" + other.gameObject.tag + "!");
+        if (other.gameObject.CompareTag("bitcoin"))
         {
-            Destroy(pengzhuan.gameObject);
+            Destroy(other.gameObject);
             bitcoin++;
             scoretext.text = bitcoin.ToString();
         }
-        if(pengzhuan.gameObject.CompareTag("win"))
+        if (other.gameObject.CompareTag("win"))
         {
+            warning.text = "请按住E保存";
             warning.enabled = true;
         }
     }
-
     private void OnTriggerStay(Collider other)
     {
         Debug.Log("我正在呆在：" + other.gameObject.tag + "!");

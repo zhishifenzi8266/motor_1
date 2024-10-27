@@ -10,6 +10,7 @@ TagManager:
   - bitcoin
   - slider
   - text
+  - warning
   layers:
   - Default
   - TransparentFX
