@@ -85,4 +85,10 @@ public class PlayerMove : MonoBehaviour
             warning.enabled = true;
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("我正在呆在：" + other.gameObject.tag + "!");
+    }
+
 }
